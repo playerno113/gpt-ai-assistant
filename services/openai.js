@@ -20,10 +20,15 @@ export const MODEL_WHISPER_1 = 'whisper-1';
 export const MODEL_DALL_E_3 = 'dall-e-3';
 
 const client = axios.create({
-  baseURL: 'https://openrouter.ai/api/v1',
+  baseURL: 'https://openrouter.ai/api/v1', 
   timeout: config.OPENAI_TIMEOUT,
   headers: {
     'Accept-Encoding': 'gzip, deflate, compress',
+    'HTTP-Referer': 'https://github.com/playerno113/gpt-ai-assistant', // 
+    'X-Title': 'LINE GPT Bot', // 
+  },
+});
+
   },
 });
 
