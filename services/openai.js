@@ -20,7 +20,7 @@ export const MODEL_WHISPER_1 = 'whisper-1';
 export const MODEL_DALL_E_3 = 'dall-e-3';
 
 const client = axios.create({
-  baseURL: config.OPENAI_BASE_URL,
+  baseURL: 'https://openrouter.ai/api/v1',
   timeout: config.OPENAI_TIMEOUT,
   headers: {
     'Accept-Encoding': 'gzip, deflate, compress',
