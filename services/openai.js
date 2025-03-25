@@ -24,11 +24,8 @@ const client = axios.create({
   timeout: config.OPENAI_TIMEOUT,
   headers: {
     'Accept-Encoding': 'gzip, deflate, compress',
-    'HTTP-Referer': 'https://github.com/playerno113/gpt-ai-assistant', // 
-    'X-Title': 'LINE GPT Bot', // 
-  },
-});
-
+    'HTTP-Referer': 'https://github.com/playerno113/gpt-ai-assistant',
+    'X-Title': 'LINE GPT Bot',
   },
 });
 
@@ -66,7 +63,7 @@ const createChatCompletion = ({
     frequency_penalty: frequencyPenalty,
     presence_penalty: presencePenalty,
   };
-  return client.post('/v1/chat/completions', body);
+  return client.post('/chat/completions', body);
 };
 
 const createImage = ({
