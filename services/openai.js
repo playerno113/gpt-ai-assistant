@@ -73,11 +73,9 @@ const createImage = ({
   quality = config.OPENAI_IMAGE_GENERATION_QUALITY,
   n = 1,
 }) => {
-  // set image size to 1024 when using the DALL-E 3 model and the requested size is 256 or 512.
   if (model === MODEL_DALL_E_3 && [IMAGE_SIZE_256, IMAGE_SIZE_512].includes(size)) {
     size = IMAGE_SIZE_1024;
   }
-
   return client.post('/v1/images/generations', {
     model,
     prompt,
