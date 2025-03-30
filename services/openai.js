@@ -48,15 +48,14 @@ const hasImage = ({ messages }) => (
 );
 
 const createChatCompletion = ({
-  model = config.OPENAI_COMPLETION_MODEL,
   messages,
-  temperature = config.OPENAI_COMPLETION_TEMPERATURE,
-  maxTokens = config.OPENAI_COMPLETION_MAX_TOKENS,
-  frequencyPenalty = config.OPENAI_COMPLETION_FREQUENCY_PENALTY,
-  presencePenalty = config.OPENAI_COMPLETION_PRESENCE_PENALTY,
+  temperature = 1,
+  maxTokens = 1000,
+  frequencyPenalty = 0,
+  presencePenalty = 0,
 }) => {
   const body = {
-    model: hasImage({ messages }) ? config.OPENAI_VISION_MODEL : model,
+    model: 'mistralai/mistral-7b-instruct:free',
     messages,
     temperature,
     max_tokens: maxTokens,
